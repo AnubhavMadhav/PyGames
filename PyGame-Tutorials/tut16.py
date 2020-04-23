@@ -1,7 +1,7 @@
 '''
 Coding our First Game in PyGame
 -
-Creating HighScore and Displaying it
+Cheat Codes and HomeScreen in PyGame
 '''
 
 import pygame
@@ -37,6 +37,26 @@ def text_screen(text, color, x, y):
 def plot_snake(gameWindow, color, snk_list, snake_size):
     for x,y in snk_list:
         pygame.draw.rect(gameWindow, color, [x, y, snake_size, snake_size])
+
+
+def welcome():                      # For Home Screen
+    exit_game = False
+    while not exit_game:
+        gameWindow.fill((233, 220, 229))
+        text_screen("Welcome to Snakes", black, 260, 250)
+        text_screen("Developed by Anubhav Madhav", black, 170, 300)
+        text_screen("Press Space Bar to Play", black, 220, 400)
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                exit_game = True
+
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:
+                    gameloop()
+
+        pygame.display.update()
+        clock.tick(30)                          # hardcoded 'fps' because 'fps' is local variable of gameloop(), therefore we cannot use it in welcome()
 
 
 # Creating a Game Loop
@@ -80,7 +100,7 @@ def gameloop():
 
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_RETURN:
-                        gameloop()
+                        welcome()
 
 
         else:
@@ -106,6 +126,9 @@ def gameloop():
                     if event.key == pygame.K_DOWN:
                         velocity_y = init_velocity
                         velocity_x = 0
+
+                    if event.key == pygame.K_q:                 # cheatcode
+                        score += 10
 
             snake_x = snake_x + velocity_x
             snake_y = snake_y + velocity_y
@@ -152,4 +175,4 @@ def gameloop():
     pygame.quit()
     quit()
 
-gameloop()
+welcome()
