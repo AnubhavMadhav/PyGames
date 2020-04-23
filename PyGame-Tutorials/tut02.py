@@ -4,7 +4,7 @@ pygame.init()
 
 # Creating Game Window
 gameWindow = pygame.display.set_mode((1200,500))                    # Game Window of 1200x500
-pygame.display.set_caption("My First Game")             # Title of the Game, which appears at the top of the window
+pygame.display.set_caption("My First Game")               # Title of the Game, which appears at the top of the window
 
 # Game Specific Variables
 exit_game = False

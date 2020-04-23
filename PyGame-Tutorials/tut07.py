@@ -38,7 +38,7 @@ while not exit_game:
         if event.type == pygame.QUIT:
             exit_game = True
 
-    gameWindow.fill(white)                      # Setting background color as white
+    gameWindow.fill(white)                        # Setting background color as white
     pygame.draw.rect(gameWindow, black, [snake_x, snake_y, snake_size, snake_size])                   # Making Head of Snake using Rectangle
     pygame.display.update()                         # Need to update display cause we have made changes to gameWindow
 

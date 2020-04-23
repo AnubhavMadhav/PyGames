@@ -18,7 +18,7 @@ black = (0, 0, 0)
 screen_width = 900
 screen_height = 600
 gameWindow = pygame.display.set_mode((screen_width, screen_height))                    # Game Window of 1200x500
-pygame.display.set_caption("Snake - by Anubhav Madhav")             # Title of the Game, which appears at the top of the window
+pygame.display.set_caption("Snake - by Anubhav Madhav")               # Title of the Game, which appears at the top of the window
 pygame.display.update()                 # We need to update our display each and everytime we make a change
 
 

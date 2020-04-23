@@ -13,7 +13,7 @@ game_over = False
 
 # Creating a Game Loop
 
-while not exit_game:            # This is an infinite loop for now
+while not exit_game:              # This is an infinite loop for now
     pass
 
 pygame.quit()
