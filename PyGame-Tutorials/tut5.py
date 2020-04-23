@@ -17,7 +17,7 @@ game_over = False
 
 # Creating a Game Loop
 
-while not exit_game:            # This is an infinite loop for now
+while not exit_game:
     for event in pygame.event.get():                # This gets all the events which a user can perform in a game, like mouse hover, mouse click, pressing a certain key etc.
         if event.type == pygame.QUIT:
             exit_game = True
