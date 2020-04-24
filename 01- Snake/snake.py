@@ -29,6 +29,9 @@ bgimg = pygame.image.load("bgimg.jpg")
 bgimg = pygame.transform.scale(bgimg, (screen_width, screen_height)).convert_alpha()            # convert alpha do not let the loading of image make delay in game
 homeimg = pygame.image.load("home.png")
 homeimg = pygame.transform.scale(homeimg, (screen_width, screen_height)).convert_alpha()            # convert alpha do not let the loading of image make delay in game
+gameover = pygame.image.load("gameover.png")
+gameover = pygame.transform.scale(gameover, (screen_width, screen_height)).convert_alpha()            # convert alpha do not let the loading of image make delay in game
+
 
 clock = pygame.time.Clock()
 
@@ -100,7 +103,8 @@ def gameloop():
 
         if game_over:
             gameWindow.fill(white)
-            text_screen("Game Over!! Press Enter to Continue", red, 100, 250)
+            gameWindow.blit(gameover, (0, 0))
+            # text_screen("Game Over!! Press Enter to Continue", red, 100, 250)
             with open("highscore.txt", "w") as f:
                 f.write(str(hiscore))
 
@@ -128,17 +132,21 @@ def gameloop():
                         velocity_x = init_velocity
                         velocity_y = 0
 
+
                     if event.key == pygame.K_LEFT:
                         velocity_x = - init_velocity
                         velocity_y = 0
+
 
                     if event.key == pygame.K_UP:
                         velocity_y = - init_velocity
                         velocity_x = 0
 
+
                     if event.key == pygame.K_DOWN:
                         velocity_y = init_velocity
                         velocity_x = 0
+
 
                     if event.key == pygame.K_q:                 # cheatcode
                         score += 10
@@ -175,11 +183,13 @@ def gameloop():
 
             if head in snk_list[:-1]:
                 game_over  = True
+                gameWindow.blit(gameover, (0, 0))
                 pygame.mixer.music.load('gameover.mp3')
                 pygame.mixer.music.play()
 
             if snake_x<60 or snake_x>screen_width-90 or snake_y<50 or snake_y>screen_height-80:
                 game_over = True
+                gameWindow.blit(gameover, (0, 0))
                 pygame.mixer.music.load('gameover.mp3')
                 pygame.mixer.music.play()
                 # print("Game Over!!")
