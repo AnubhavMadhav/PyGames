@@ -45,7 +45,7 @@ def text_screen(text, color, x, y):
 
 def plot_snake(gameWindow, color, snk_list, snake_size):
     for x,y in snk_list:
-        pygame.draw.rect(gameWindow, color, [x, y, snake_size, snake_size])
+        pygame.draw.ellipse(gameWindow, color, [x, y, snake_size, snake_size])
 
 
 def welcome():                      # For Home Screen
@@ -104,8 +104,8 @@ def gameloop():
         if game_over:
             gameWindow.fill(white)
             gameWindow.blit(gameover, (0, 0))
-            # text_screen("Game Over!! Press Enter to Continue", red, 100, 250)
-            with open("highscore.txt", "w") as f:
+            text_screen("Score: " + str(score), black, 360, 350)
+            with open("highscore.txt", "w") as f :
                 f.write(str(hiscore))
 
 
@@ -169,9 +169,9 @@ def gameloop():
 
             gameWindow.fill(white)                      # Setting background color as white
             gameWindow.blit(bgimg, (0, 0))
-            pygame.draw.rect(gameWindow, red, [food_x, food_y, food_size, food_size])                   # Making Food for Snake using Rectangle
+            pygame.draw.ellipse(gameWindow, red, [food_x, food_y, food_size, food_size])                   # Making Food for Snake using Rectangle
 
-            text_screen("Score: " + str(score ) + "   HighScore: " + str(hiscore), red, 5, 5)
+            text_screen("Score: " + str(score) + "   HighScore: " + str(hiscore), red, 5, 5)
 
             head = []                           # for the starting of the game
             head.append(snake_x)
