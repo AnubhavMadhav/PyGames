@@ -79,8 +79,8 @@ def gameloop():
     init_velocity = 5
     velocity_x = 0
     velocity_y = 0
-    food_x = random.randint(50, screen_width / 2)
-    food_y = random.randint(50, screen_height / 2)
+    food_x = random.randint(80, 80)
+    food_y = random.randint(80, 80)
     food_size = 30
     score = 0
     fps = 30  # frames per second
