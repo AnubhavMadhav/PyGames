@@ -21,15 +21,15 @@ black = (0, 0, 0)
 screen_width = 900
 screen_height = 600
 gameWindow = pygame.display.set_mode((screen_width, screen_height))                    # Game Window of 1200x500
-pygame.display.set_caption("Snake - by Anubhav Madhav")             # Title of the Game, which appears at the top of the window
+pygame.display.set_caption("Snake")             # Title of the Game, which appears at the top of the window
 pygame.display.update()                 # We need to update our display each and everytime we make a change
 
 # Background Image
-bgimg = pygame.image.load("bgimg.jpg")
+bgimg = pygame.image.load("images/bgimg.jpg")
 bgimg = pygame.transform.scale(bgimg, (screen_width, screen_height)).convert_alpha()            # convert alpha do not let the loading of image make delay in game
-homeimg = pygame.image.load("home.png")
+homeimg = pygame.image.load("images/home.png")
 homeimg = pygame.transform.scale(homeimg, (screen_width, screen_height)).convert_alpha()            # convert alpha do not let the loading of image make delay in game
-gameover = pygame.image.load("gameover.png")
+gameover = pygame.image.load("images/gameover.png")
 gameover = pygame.transform.scale(gameover, (screen_width, screen_height)).convert_alpha()            # convert alpha do not let the loading of image make delay in game
 
 
@@ -71,7 +71,7 @@ def welcome():                      # For Home Screen
 
 # Creating a Game Loop
 def gameloop():
-    pygame.mixer.music.load('back.mp3')
+    pygame.mixer.music.load('audios/back.mp3')
     pygame.mixer.music.play()
     # Game Specific Variables
     exit_game = False
@@ -82,8 +82,8 @@ def gameloop():
     init_velocity = 5
     velocity_x = 0
     velocity_y = 0
-    food_x = random.randint(80, screen_width/2)
-    food_y = random.randint(80, screen_height/2)
+    food_x = random.randint(100, screen_width/2)
+    food_y = random.randint(100, screen_height/2)
     food_size = 30
     score = 0
     fps = 30  # frames per second
@@ -184,13 +184,13 @@ def gameloop():
             if head in snk_list[:-1]:
                 game_over  = True
                 gameWindow.blit(gameover, (0, 0))
-                pygame.mixer.music.load('gameover.mp3')
+                pygame.mixer.music.load('audios/gameover.mp3')
                 pygame.mixer.music.play()
 
             if snake_x<60 or snake_x>screen_width-90 or snake_y<50 or snake_y>screen_height-80:
                 game_over = True
                 gameWindow.blit(gameover, (0, 0))
-                pygame.mixer.music.load('gameover.mp3')
+                pygame.mixer.music.load('audios/gameover.mp3')
                 pygame.mixer.music.play()
                 # print("Game Over!!")
 
