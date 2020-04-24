@@ -29,7 +29,7 @@ This game is developed using Python 3.7.6 & PyGame Module.
 
     **Note: Install 'pip', if you haven't**
     
-3) Double Click on the 'snake.exe' file to play the game.
+3) Run the snake.py file to play the game.
 
 ---
 **Rules:**
