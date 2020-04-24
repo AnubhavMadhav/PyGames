@@ -48,7 +48,7 @@ Don't Delete any file.... IT MAY CRASH THE GAME!!
 > **Cheats**
 <br>
 Press <b>q</b> to add extra 10 points. :smile:
-
+<br>
 * Follow me on Instagram: [anubhav_madhav](https://www.instagram.com/anubhav_madhav)
 
 ### ThankYou!
