@@ -27,7 +27,7 @@ pygame.display.update()                 # We need to update our display each and
 # Background Image
 bgimg = pygame.image.load("bgimg.jpg")
 bgimg = pygame.transform.scale(bgimg, (screen_width, screen_height)).convert_alpha()            # convert alpha do not let the loading of image make delay in game
-homeimg = pygame.image.load("home.jpg")
+homeimg = pygame.image.load("home.png")
 homeimg = pygame.transform.scale(homeimg, (screen_width, screen_height)).convert_alpha()            # convert alpha do not let the loading of image make delay in game
 
 clock = pygame.time.Clock()
@@ -50,9 +50,9 @@ def welcome():                      # For Home Screen
     while not exit_game:
         gameWindow.fill((233, 220, 229))
         gameWindow.blit(homeimg, (0, 0))
-        text_screen("Welcome to Snake", black, 260, 150)
-        text_screen("Developed by Anubhav Madhav", black, 170, 200)
-        text_screen("Press Space Bar to Play", black, 220, 350)
+        # text_screen("Welcome to Snake", black, 260, 150)
+        # text_screen("Developed by Anubhav Madhav", black, 170, 200)
+        # text_screen("Press Space Bar to Play", black, 220, 350)
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
